@@ -1,0 +1,25 @@
+{
+  "name": "@indexdata/folio",
+  "version": "0.0.1",
+  "description": "Simple client library for the FOLIO library services platform",
+  "repository": "https://github.com/MikeTaylor/folio",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "Apache-2.0",
+  "bin": {
+    "folio-fetch-users": "./bin/folio-fetch-users.js",
+    "folio-update-md": "./bin/folio-update-md.js"
+  },
+  "scripts": {
+    "lint": "eslint -f unix .",
+    "qlint": "eslint -f unix  --rule '{\"no-console\":\"off\"}' ."
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
