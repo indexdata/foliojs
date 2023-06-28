@@ -5,7 +5,7 @@
 // eslint-disable-next-line import/extensions
 import Folio from '../lib/index.js';
 
-const md = Folio.parseModuleDescriptor('package', './package.json');
+const md = Folio.parseModuleDescriptor('package', '../../../stripes/ui-harvester-admin/package.json');
 const id = md.id();
 const service = Folio.service('https://harvester-dev-okapi.folio-dev.indexdata.com');
 const session1 = await service.login('supertenant', 'okapi_admin', 'abc123');
