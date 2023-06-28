@@ -2,7 +2,6 @@
 
 // In development, run with: yarn exec ./folio-update-md.js
 
-// eslint-disable-next-line import/extensions
 import Folio from '../lib/index.js';
 
 const md = Folio.parseModuleDescriptor('package', '../../../stripes/ui-harvester-admin/package.json');

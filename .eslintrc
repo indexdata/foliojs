@@ -11,6 +11,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-multiple-empty-lines": "off"
+    "no-multiple-empty-lines": "off",
+    "import/extensions": "off"
   }
 }

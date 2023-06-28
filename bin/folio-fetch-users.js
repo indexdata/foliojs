@@ -2,7 +2,6 @@
 
 // In development, run with: yarn exec ./folio-fetch-users.js
 
-// eslint-disable-next-line import/extensions
 import Folio from '../lib/index.js';
 
 const service = Folio.service('https://folio-snapshot-okapi.dev.folio.org');
