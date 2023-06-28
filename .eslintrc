@@ -12,6 +12,8 @@
   },
   "rules": {
     "no-multiple-empty-lines": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "max-len": "off",
+    "arrow-parens": "off"
   }
 }
