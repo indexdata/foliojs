@@ -3,11 +3,11 @@
 // In development, run with: yarn exec ./folio-update-md.js
 
 // eslint-disable-next-line import/extensions
-import FOLIO from '../lib/index.js';
+import Folio from '../lib/index.js';
 
-const md = FOLIO.parseModuleDescriptor('package', './package.json');
+const md = Folio.parseModuleDescriptor('package', './package.json');
 const id = md.id();
-const service = FOLIO.service('https://harvester-dev-okapi.folio-dev.indexdata.com');
+const service = Folio.service('https://harvester-dev-okapi.folio-dev.indexdata.com');
 const session1 = await service.login('supertenant', 'okapi_admin', 'abc123');
 await session1.disable('diku', id);
 md.incrementId();
