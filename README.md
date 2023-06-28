@@ -11,7 +11,7 @@ This is a simple Node library to allow the creation of scripts that manipulate i
 ```
 import Folio from '@indexdata/folio';
 const service = Folio.service('https://folio-snapshot-okapi.dev.folio.org');
-const session1 = await service.login('diku', 'diku_admin', 'admin');
+const session1 = await service.login('diku', 'user-basic-view', 'user-basic-view');
 const body = await session1.folioFetch('/users?limit=3&query=(active=="true")');
 console.log(body);
 ```
