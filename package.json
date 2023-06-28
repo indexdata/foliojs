@@ -15,6 +15,7 @@
     "qlint": "eslint -f unix  --rule '{\"no-console\":\"off\"}' ."
   },
   "dependencies": {
+    "categorical-logger": "^1.0.0",
     "node-fetch": "^3.3.1"
   },
   "devDependencies": {
