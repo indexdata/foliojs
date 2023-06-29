@@ -7,7 +7,7 @@
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "bin": {
-    "folio-fetch-users": "./bin/folio-fetch-users.js",
+    "folio-list-users": "./bin/folio-list-users.js",
     "folio-update-md": "./bin/folio-update-md.js"
   },
   "scripts": {

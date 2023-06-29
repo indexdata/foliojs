@@ -28,7 +28,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
 
 ## Overview
 
-This is a simple Node library to allow the creation of scripts that manipulate instances of [the FOLIO library services platform](https://www.folio.org/). For example, [a very simple program](bin/folio-fetch-users.js) to fetch list the first 20 usernames with asterisks next to the active ones might read as follows:
+This is a simple Node library to allow the creation of scripts that manipulate instances of [the FOLIO library services platform](https://www.folio.org/). For example, [a very simple program](bin/folio-list-users.js) to fetch list the first 20 usernames with asterisks next to the active ones might read as follows:
 ```
 import Folio from '../lib/index.js';
 const service = Folio.service('https://folio-snapshot-okapi.dev.folio.org');
