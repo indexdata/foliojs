@@ -15,7 +15,7 @@ const id = md.getId();
 const service = Folio.service('https://harvester-dev-okapi.folio-dev.indexdata.com');
 const session1 = await service.login('supertenant', 'okapi_admin', password);
 await session1.disable('harvester', id);
-md.incrementId();
+md.incrementVersion();
 await session1.postModule(md);
 await session1.enable('harvester', md.getId());
 

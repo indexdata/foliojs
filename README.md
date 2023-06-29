@@ -21,7 +21,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
         * [getVersion()](#getversion)
         * [getId()](#getid)
         * [getJson()](#getjson)
-        * [incrementId()](#incrementid)
+        * [incrementVersion()](#incrementversion)
 * [Logging](#logging)
 * [Synchronous and asynchronous operations](#synchronous-and-asynchronous-operations)
 * [Author](#author)
@@ -125,7 +125,7 @@ The name, version and ID should all be treated as opaque tokens.
 
 Returns the JSON structure of the module descriptor, whether it was read directly from a module-descriptor file (type=`md`) or translated from a Node package file (type=`package`). Note that this is an object, not a string.
 
-#### incrementId()
+#### incrementVersion()
 
 Statefully increments the version number of the module by increasing its patchlevel by one. The major and minor parts of the version number are unaffected, so for example `2.0.13` becomes `2.0.14`.
 
