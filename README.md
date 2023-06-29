@@ -133,7 +133,7 @@ Apart from categories used by `log` invocations in application node, the followi
 
 ## Synchronous and asynchronous operations
 
-XXX
+In Node programming, many operations are asynchronous -- a feature that is powerful, but which requires some thought to use correctly. The asynchronous functions provided by this library are marked `async` above, and can be invoked synchronously by prefixing their invocation with `await`. This is probably the right way to do things in most scripting contexts, but more sophisticated applications can be built if desired.
 
 
 
