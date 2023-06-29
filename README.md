@@ -16,6 +16,10 @@ This software is distributed under the terms of the Apache License, Version 2.0.
     * [class `FolioSession`](#class-foliosession)
         * [log(category, args...)](#logcategory-args)
         * [async folioFetch(path, options)](#async-foliofetchpath-options)
+        * [async postModule(md)](#async-postmodulemd)
+        * [async modulesEnabled(tenant)](#async-modulesenabledtenant)
+        * [async disable(tenant, moduleId)](#async-disabletenant-moduleid)
+        * [async enable(tenant, moduleId)](#async-enabletenant-moduleid)
     * [class `FolioModuleDescriptor`](#class-foliomoduledescriptor)
         * [getName()](#getname)
         * [getVersion()](#getversion)
@@ -98,6 +102,22 @@ The differences from regular `fetch` are:
 * The value returted from a successful call is the parsed JSON of the response, or undefined if there is no content, rather than a [Response object](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
 All of these changes make this fetch function convenient to use with FOLIO services.
+
+#### async postModule(md)
+
+Posts the module specified by the `FolioModuleDescriptor` object `md` to the session's service, making it available to be enabled by tenants on that service.
+
+#### async modulesEnabled(tenant)
+
+Returns a list of all modules that are enabled for the specified tenant. Note that this is not necessarily the tenant of the session: in particular, this method may be evoked by a supertenant session to inspect the modules enabled for a regular tenant.
+
+#### async disable(tenant, moduleId)
+
+Disables the module specified by the supplied ID for the specified tenant.
+
+#### async enable(tenant, moduleId)
+
+Enables the module specified by the supplied ID for the specified tenant.
 
 
 ### class `FolioModuleDescriptor`
