@@ -20,6 +20,8 @@ This software is distributed under the terms of the Apache License, Version 2.0.
         * [getName()](#getname)
         * [getVersion()](#getversion)
         * [getId()](#getid)
+        * [getJson()](#getjson)
+        * [incrementId()](#incrementid)
 * [Logging](#logging)
 * [Synchronous and asynchronous operations](#synchronous-and-asynchronous-operations)
 * [Author](#author)
@@ -118,6 +120,16 @@ Returns the full ID of the module, combining the name and version, as used in Ok
 `folio_circulation-log-3.0.0` (a UI module) or `mod-graphql-1.11.0` (a back-end module).
 
 The name, version and ID should all be treated as opaque tokens.
+
+#### getJson()
+
+Returns the JSON structure of the module descriptor, whether it was read directly from a module-descriptor file (type=`md`) or translated from a Node package file (type=`package`). Note that this is an object, not a string.
+
+#### incrementId()
+
+Statefully increments the version number of the module by increasing its patchlevel by one. The major and minor parts of the version number are unaffected, so for example `2.0.13` becomes `2.0.14`.
+
+**Note.** This method exists only for its side-effect. If this was a Ruby library, the method name would end with `!`. After it is invoked, any old values of the module version, ID or content must be discarded, and new values obtained using `md.getVersion()`, `md.getId()` and `md.getJson()`.
 
 
 
