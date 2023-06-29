@@ -123,11 +123,12 @@ The name, version and ID should all be treated as opaque tokens.
 
 ## Logging
 
-This library uses [`categorical-logger`](https://github.com/openlibraryenvironment/categorical-logger) to provide optional logging. This is configured at run-time by setting `LOGGING_CATEGORIES` or `LOGCAT` environment variabl, which is set to a comma-separated list of categories such as `curl,md,data`. Messages in all the listed categories are logged.
+This library uses [`categorical-logger`](https://github.com/openlibraryenvironment/categorical-logger) to provide optional logging. This is configured at run-time by setting `LOGGING_CATEGORIES` or `LOGCAT` environment variabl, which is set to a comma-separated list of categories such as `curl,status,response`. Messages in all the listed categories are logged.
 
-Apart from categories used by `log` invocations in application node, only a single category is currently used by the libarary itself:
-* `curl`: whenever an HTTP request is made, the equivalent `curl` command is emitted. This can be useful for reproducing bugs.
-
+Apart from categories used by `log` invocations in application node, the following categories are used by the libarary itself:
+* `curl`: whenever an HTTP request is made, the equivalent `curl` command is logged. This can be useful for reproducing bugs.
+* `status`: whenever an HTTP response is received, its HTTP status and content-type are logged.
+* `response`: whenever an HTTP response is received, its content is logged.
 
 
 ## Synchronous and asynchronous operations
