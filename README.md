@@ -1,4 +1,4 @@
-# @indexdata/folio
+# @indexdata/foliojs
 
 Copyright (C) 2023 Index Data Aps.
 
@@ -30,7 +30,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
 
 This is a simple Node library to allow the creation of scripts that manipulate instances of [the FOLIO library services platform](https://www.folio.org/). [A very simple program](bin/folio-fetch-users.js) to fetch three users from FOLIO might read as follows:
 ```
-import Folio from '@indexdata/folio';
+import Folio from '@indexdata/foliojs';
 const service = Folio.service('https://folio-snapshot-okapi.dev.folio.org');
 const session1 = await service.login('diku', 'user-basic-view', 'user-basic-view');
 const body = await session1.folioFetch('/users?limit=3&query=(active=="true")');

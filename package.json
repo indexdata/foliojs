@@ -1,5 +1,5 @@
 {
-  "name": "@indexdata/folio",
+  "name": "@indexdata/foliojs",
   "version": "0.0.1",
   "description": "Simple client library for the FOLIO library services platform",
   "repository": "https://github.com/MikeTaylor/folio",

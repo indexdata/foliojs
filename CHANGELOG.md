@@ -1,4 +1,4 @@
-# Change history for @indexdata/folio
+# Change history for @indexdata/foliojs
 
 ## (IN PROGRESS)
 
