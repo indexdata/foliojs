@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// Run as: env LOGCAT=status OKAPI_URL=https://harvester-dev-okapi.folio-dev.indexdata.com OKAPI_TENANT=supertenant OKAPI_USER=okapi_admin OKAPI_PW=swordfish ../bin/folio-update-md.js harvester ../../../stripes/ui-harvester-admin/package.json
+
 import Folio from '../lib/index.js';
 
 if (process.argv.length !== 4) {
