@@ -14,6 +14,7 @@
     "no-multiple-empty-lines": "off",
     "import/extensions": "off",
     "max-len": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "no-unused-vars": [ "warn", { "destructuredArrayIgnorePattern": "^_" } ]
   }
 }

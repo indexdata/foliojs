@@ -9,6 +9,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
 * [API](#api)
     * [Top level](#top-level)
         * [Folio.service(url)](#folioserviceurl)
+        * [async Folio.defaultSetup()](#async-foliodefaultsetup)
         * [Folio.parseModuleDescriptor(type, filename)](#folioparsemoduledescriptortype-filename)
     * [class `FolioService`](#class-folioservice)
         * [log(category, args...)](#logcategory-args)
@@ -53,11 +54,19 @@ The API consists of a single exported object which provides two functions, and t
 
 ### Top level
 
-A single object, `Folio`, is imported. It provides two functions:
+A single object, `Folio`, is imported. It provides three functions:
 
 #### Folio.service(url)
 
 Creates and returns a new `FolioService` object associated with the specified Okapi URL. It is possible for a program to use multiple FOLIO services. See below for details of the `FolioService` class.
+
+#### async Folio.defaultSetup()
+
+A convenience function that sets up a service and a session using that service, returned together as the array `[service, session]`.
+
+The service uses the URL specified by the `OKAPI_URL` environment variable; the session is for the tenant specified by the `OKAPI_TENANT` environment variable, and is authenticated by the username and password specified in the `OKAPI_USER` and `OKAPI_PW` environment variables. An exception is thrown if any of these required environment variables is unset.
+
+(The names of these enviroment variables follow an informal convention that is used by some other command-line FOLIO utilities, including [`okapi-curl`](https://github.com/MikeTaylor/okapi-curl).)
 
 #### Folio.parseModuleDescriptor(type, filename)
 
