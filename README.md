@@ -10,7 +10,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
     * [Top level](#top-level)
         * [Folio.service(url)](#folioserviceurl)
         * [async Folio.defaultSetup()](#async-foliodefaultsetup)
-        * [Folio.parseModuleDescriptor(type, filename)](#folioparsemoduledescriptortype-filename)
+        * [Folio.parseModuleDescriptor(filename, [type])](#folioparsemoduledescriptorfilename-type)
     * [class `FolioService`](#class-folioservice)
         * [log(category, args...)](#logcategory-args)
         * [async login(tenant, username, password)](#async-logintenant-username-password)
@@ -68,9 +68,13 @@ The service uses the URL specified by the `OKAPI_URL` environment variable; the 
 
 (The names of these enviroment variables follow an informal convention that is used by some other command-line FOLIO utilities, including [`okapi-curl`](https://github.com/MikeTaylor/okapi-curl).)
 
-#### Folio.parseModuleDescriptor(type, filename)
+#### Folio.parseModuleDescriptor(filename, [type])
 
-Parses the module descriptor in `filename` and returns a new `FolioModuleDescriptor` object representing it. The type may be `md` (in which case the file is assumed to be already in module-descriptor form, as is the case for back-end FOLIO modules) or `package` (in which case it is assumed to be the package file of a Node module providing a UI module, and is translated into a module descriptor using the same rules as `stripes mod descriptor --full`).
+Parses the module descriptor in `filename` and returns a new `FolioModuleDescriptor` object representing it.
+
+The type may be `md` (in which case the file is assumed to be already in module-descriptor form, as is the case for back-end FOLIO modules) or `package` (in which case it is assumed to be the package file of a Node module providing a UI module, and is translated into a module descriptor using the same rules as `stripes mod descriptor --full`).
+
+If `type` is undefined or omitted, then the nominated file is assumed to be a Node package file if it ends with `package.json`, and a module descriptor otherwise.
 
 
 ### class `FolioService`
