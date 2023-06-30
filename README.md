@@ -167,6 +167,7 @@ Statefully increments the version number of the module by increasing its patchle
 This library uses [`categorical-logger`](https://github.com/openlibraryenvironment/categorical-logger) to provide optional logging. This is configured at run-time by setting `LOGGING_CATEGORIES` or `LOGCAT` environment variabl, which is set to a comma-separated list of categories such as `curl,status,response`. Messages in all the listed categories are logged.
 
 Apart from categories used by `log` invocations in application node, the following categories are used by the libarary itself:
+* `op`: whenever a high-level Okapi operation is about to be executed, its name and parameters are logged.
 * `curl`: whenever an HTTP request is made, the equivalent `curl` command is logged. This can be useful for reproducing bugs.
 * `status`: whenever an HTTP response is received, its HTTP status and content-type are logged.
 * `response`: whenever an HTTP response is received, its content is logged.
