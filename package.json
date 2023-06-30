@@ -8,7 +8,8 @@
   "license": "Apache-2.0",
   "bin": {
     "folio-list-users": "./bin/folio-list-users.js",
-    "folio-update-md": "./bin/folio-update-md.js"
+    "folio-update-md": "./bin/folio-update-md.js",
+    "folio-add-perms": "./bin/folio-add-perms.js"
   },
   "scripts": {
     "lint": "eslint -f unix .",

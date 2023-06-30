@@ -22,12 +22,14 @@ This software is distributed under the terms of the Apache License, Version 2.0.
         * [async modulesEnabled(tenant)](#async-modulesenabledtenant)
         * [async disable(tenant, moduleDescriptorOrId)](#async-disabletenant-moduledescriptororid)
         * [async enable(tenant, moduleDescriptorOrId)](#async-enabletenant-moduledescriptororid)
+        * [async addPermsToUser(targetUser, perms)](#async-addpermstousertargetuser-perms)
     * [class `FolioModuleDescriptor`](#class-foliomoduledescriptor)
         * [getName()](#getname)
         * [getVersion()](#getversion)
         * [getId()](#getid)
         * [getJson()](#getjson)
         * [incrementVersion()](#incrementversion)
+        * [permissionNames()](#permissionnames)
 * [Logging](#logging)
 * [Synchronous and asynchronous operations](#synchronous-and-asynchronous-operations)
 * [Author](#author)
@@ -138,6 +140,11 @@ Disables the module specified by the supplied module-descriptor (a `FolioModuleD
 
 Enables the module specified by the supplied module-descriptor (a `FolioModuleDescriptor` object) or ID (string) for the specified tenant.
 
+#### async addPermsToUser(targetUser, perms)
+
+Adds the specified array permissions (such as those returned by `md.permissions()`) to the user whose username is specified.
+
+
 ### class `FolioModuleDescriptor`
 
 Service objects are not created directly by client code, but by the `Folio.parseModuleDescriptor` factory function. They represent parsed module descriptors.
@@ -168,6 +175,10 @@ Returns the JSON structure of the module descriptor, whether it was read directl
 Statefully increments the version number of the module by increasing its patchlevel by one. The major and minor parts of the version number are unaffected, so for example `2.0.13` becomes `2.0.14`.
 
 **Note.** This method exists only for its side-effect. If this was a Ruby library, the method name would end with `!`. After it is invoked, any old values of the module version, ID or content must be discarded, and new values obtained using `md.getVersion()`, `md.getId()` and `md.getJson()`.
+
+#### permissionNames()
+
+Returns an array of the names of all the permissions defined by the module descriptor.
 
 
 
