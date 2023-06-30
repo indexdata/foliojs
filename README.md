@@ -180,6 +180,8 @@ In Node programming, many operations are asynchronous -- a feature that is power
 
 ## Author
 
-Mike Taylor (mike@indexdata.com)
+Mike Taylor (mike@indexdata.com),
+for [Index Data Aps](https://www.indexdata.com/).
+
 
 
