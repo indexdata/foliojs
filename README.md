@@ -24,6 +24,10 @@ const body = await session.folioFetch('/users?limit=20');
 console.log(body.users.map(u => `${u.active ? '*' : ' '} ${u.username}`).join('\n'));
 ```
 
+Other applications might include:
+* [Updating the module-descriptor in use for a module](bin/folio-update-md.js)
+* [Adding to a user the permissions defined in a module](bin/folio-add-perms.js)
+
 
 ## API
 
