@@ -14,6 +14,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
     * [class `FolioService`](#class-folioservice)
         * [log(category, args...)](#logcategory-args)
         * [async login(tenant, username, password)](#async-logintenant-username-password)
+        * [resumeSession(tenant, token)](#resumesessiontenant-token)
     * [class `FolioSession`](#class-foliosession)
         * [log(category, args...)](#logcategory-args)
         * [async folioFetch(path, options)](#async-foliofetchpath-options)
@@ -92,6 +93,10 @@ Emits a log message in the specified category: see below for details.
 #### async login(tenant, username, password)
 
 Creates and returns a new `FolioService` object, representing a session in the specified tenant of the service, logged in with the specified credentials (username and password). The session object retains the authentication token, and re-uses it for subsequent operations.
+
+#### resumeSession(tenant, token)
+
+Creates and returns a new `FolioService` object, representing a session that was previously created a login, indicated by the specified token -- usually a 236-character-long string beginning `eyJhbGci`. This is arguably a rather rude thing to do, but can sometimes be invaluable for recovering from certain kinds of problem.
 
 ### class `FolioSession`
 
