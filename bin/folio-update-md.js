@@ -19,9 +19,9 @@ if (!PW) {
   process.exit(2);
 }
 
-const md = Folio.parseModuleDescriptor(mdType, mdFilename);
 const service = Folio.service(URL);
 const session = await service.login(TENANT, USER, PW);
+const md = Folio.parseModuleDescriptor(mdType, mdFilename);
 await session.disable(targetTenant, md.getId());
 md.incrementVersion();
 await session.postModule(md);
