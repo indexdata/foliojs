@@ -22,7 +22,7 @@ if (!PW) {
 const service = Folio.service(URL);
 const session = await service.login(TENANT, USER, PW);
 const md = Folio.parseModuleDescriptor(mdType, mdFilename);
-await session.disable(targetTenant, md.getId());
+await session.disable(targetTenant, md);
 md.incrementVersion();
 await session.postModule(md);
-await session.enable(targetTenant, md.getId());
+await session.enable(targetTenant, md);

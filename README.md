@@ -18,8 +18,8 @@ This software is distributed under the terms of the Apache License, Version 2.0.
         * [async folioFetch(path, options)](#async-foliofetchpath-options)
         * [async postModule(md)](#async-postmodulemd)
         * [async modulesEnabled(tenant)](#async-modulesenabledtenant)
-        * [async disable(tenant, moduleId)](#async-disabletenant-moduleid)
-        * [async enable(tenant, moduleId)](#async-enabletenant-moduleid)
+        * [async disable(tenant, moduleDescriptorOrId)](#async-disabletenant-moduledescriptororid)
+        * [async enable(tenant, moduleDescriptorOrId)](#async-enabletenant-moduledescriptororid)
     * [class `FolioModuleDescriptor`](#class-foliomoduledescriptor)
         * [getName()](#getname)
         * [getVersion()](#getversion)
@@ -112,14 +112,13 @@ Posts the module specified by the `FolioModuleDescriptor` object `md` to the ses
 
 Returns a list of all modules that are enabled for the specified tenant. Note that this is not necessarily the tenant of the session: in particular, this method may be evoked by a supertenant session to inspect the modules enabled for a regular tenant.
 
-#### async disable(tenant, moduleId)
+#### async disable(tenant, moduleDescriptorOrId)
 
-Disables the module specified by the supplied ID for the specified tenant.
+Disables the module specified by the supplied module-descriptor (a `FolioModuleDescriptor` object) or ID (string) for the specified tenant.
 
-#### async enable(tenant, moduleId)
+#### async enable(tenant, moduleDescriptorOrId)
 
-Enables the module specified by the supplied ID for the specified tenant.
-
+Enables the module specified by the supplied module-descriptor (a `FolioModuleDescriptor` object) or ID (string) for the specified tenant.
 
 ### class `FolioModuleDescriptor`
 
