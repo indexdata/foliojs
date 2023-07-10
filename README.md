@@ -6,9 +6,9 @@ This software is distributed under the terms of the Apache License, Version 2.0.
 
 <!-- md2toc -l 2 README.md -->
 * [Overview](#overview)
+* [How to use this library](#how-to-use-this-library)
 * [API](#api)
 * [Logging](#logging)
-* [Synchronous and asynchronous operations](#synchronous-and-asynchronous-operations)
 * [Author](#author)
 
 
@@ -16,7 +16,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
 
 FolioJS is a simple Node library to allow the creation of scripts that manipulate instances of [the FOLIO library services platform](https://www.folio.org/). For example, [a very simple program](bin/folio-list-users.js) to list the first 20 usernames, with asterisks next to the active ones, might read as follows:
 ```
-import Folio from '../lib/index.js';
+import Folio from '@indexdata/foliojs';
 
 const service = Folio.service('https://folio-snapshot-okapi.dev.folio.org');
 const session = await service.login('diku', 'user-basic-view', 'user-basic-view');
@@ -27,6 +27,25 @@ console.log(body.users.map(u => `${u.active ? '*' : ' '} ${u.username}`).join('\
 Other applications might include:
 * [Updating the module-descriptor in use for a module](bin/folio-update-md.js)
 * [Adding to a user the permissions defined in a module](bin/folio-add-perms.js)
+
+
+## How to use this library
+
+(People who are already familiar with Node ecosystem can skip this part.)
+
+1. Create an area for the project that's going to use FolioJS.
+2. In that area, make a `package.json` file that specifies `type` as `module` and has a dependency that provides the `@indexdata/foliojs` library (see below).
+3. Write your program, including FolioJS library with `import Folio from '@indexdata/foliojs'`.
+
+The dependency on this library can be expressed numerically, in which case a corresponding released version will be used; or it can be expressed as a GitHub repository name, in which case the current version will be used. At present, no release has yet been made, so the latter approach must be used. So for example the following `package.json` can be used:
+```
+{
+  "type": "module",
+  "dependencies": {
+    "@indexdata/foliojs": "MikeTaylor/foliojs"
+  }
+}
+```
 
 
 ## API
