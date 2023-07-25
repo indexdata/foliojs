@@ -15,6 +15,7 @@
     "import/extensions": "off",
     "max-len": "off",
     "arrow-parens": "off",
-    "no-unused-vars": [ "warn", { "destructuredArrayIgnorePattern": "^_" } ]
+    "no-unused-vars": ["warn", { "destructuredArrayIgnorePattern": "^_" }],
+    "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }]
   }
 }
