@@ -18,7 +18,8 @@
   "dependencies": {
     "categorical-logger": "^1.0.0",
     "fetch-to-curl": "^0.6.0",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^3.3.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "^8.43.0",
