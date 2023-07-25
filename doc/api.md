@@ -114,6 +114,7 @@ The differences from regular `fetch` are:
 * The `X-Okapi-Tenant` header is automatically set from the session.
 * The `X-Okapi-Token` header is automatically set from the login response.
 * If the provided `options` has a `json` member, which should be of type object, it is stringified and set as the body of the reqeust, and a `Content-type: application/json` header is added.
+* If a body is provided (either as `body` or `json`) and no method is specified, then POST is used.
 * All non-2xx HTTP responses are converted into exceptions of type `Error`.
 * The value returted from a successful call is the parsed JSON of the response, or undefined if there is no content, rather than a [Response object](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
