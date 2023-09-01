@@ -3,6 +3,8 @@
 ## IN PROGRESS
 
 * Internally, use an HTTPError exception class.
+* Use new-style cookie-based authentication when available, instead of old `X-Okapi-Token` authentication.
+* Add logging catagory for authentication/reauthentication.
 
 ## [0.0.2](https://github.com/MikeTaylor/foliojs/tree/v0.0.2) (2023-08-11)
 

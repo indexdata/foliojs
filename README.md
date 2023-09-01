@@ -59,6 +59,7 @@ This library uses the tiny but beautiful [`categorical-logger`](https://github.c
 
 Apart from categories used by `log` invocations in application code, the following categories are used by the libarary itself:
 * `op`: whenever a high-level Okapi operation is about to be executed, its name and parameters are logged.
+* `auth`: emits messages when authenticating or re-authenticating a session.
 * `curl`: whenever an HTTP request is made, the equivalent `curl` command is logged. This can be useful for reproducing bugs.
 * `status`: whenever an HTTP response is received, its HTTP status and content-type are logged. The combination of `op,status` is useful for tracing what a program is doing.
 * `response`: whenever an HTTP response is received, its content is logged.
