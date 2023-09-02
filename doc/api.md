@@ -13,6 +13,7 @@ Copyright (C) 2023 Index Data Aps.
     * [async login(tenant, username, password)](#async-logintenant-username-password)
     * [resumeSession(tenant, token)](#resumesessiontenant-token)
 * [class `FolioSession`](#class-foliosession)
+    * [close()](#close)
     * [log(category, args...)](#logcategory-args)
     * [async folioFetch(path, options)](#async-foliofetchpath-options)
     * [async postModule(md)](#async-postmodulemd)
@@ -98,6 +99,14 @@ Creates and returns a new `FolioService` object, representing a session that was
 Session objects are not created directly by client code, but by the `service.login` factory function. Each session is permanently associated with a particular service, and permanently pertains to a particular tenant on that service. It is possible for a program to use sessions on the same or different FOLIO services.
 
 Aside from the private constructor and a private login method, the following public methods exist:
+
+
+### close()
+
+Ends a session and releases its resources.
+
+> **Note.**
+> It is _critically important_ to close session when they are no longer needed, otherwise the thread that periodically refreshes the session's access token is never shut down and the program will not terminate.
 
 
 ### log(category, args...)

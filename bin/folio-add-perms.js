@@ -14,3 +14,4 @@ const md = Folio.parseModuleDescriptor(mdFilename);
 const perms = md.permissionNames();
 const [_, session] = await Folio.defaultSetup();
 await session.addPermsToUser(targetUser, perms);
+session.close();

@@ -27,3 +27,4 @@ await session.disable(targetTenant, md);
 md.incrementVersion();
 await session.postModule(md);
 await session.enable(targetTenant, md);
+session.close();
