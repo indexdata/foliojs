@@ -3,7 +3,7 @@
 ## 1.0.0 IN PROGRESS
 
 * BREAKING: `session.close()` is introduced, and _must_ be called when a session is no longer needed, otherwise the program will not terminate.
-* Use new-style cookie-based authentication when available, instead of old `X-Okapi-Token` authentication, refreshing the token after half of its TTL has elapsed.
+* Use new-style cookie-based authentication when available, instead of old `X-Okapi-Token` authentication, refreshing the token after half of its TTL has elapsed. Fixes #1.
 * Add logging category for authentication/reauthentication.
 * Internally, use an HTTPError exception class.
 
