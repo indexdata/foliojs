@@ -1,6 +1,6 @@
 # Change history for @indexdata/foliojs
 
-## 1.0.0 IN PROGRESS
+## [1.0.0](https://github.com/MikeTaylor/foliojs/tree/v1.0.0) (2023-09-02)
 
 * BREAKING: `session.close()` is introduced, and _must_ be called when a session is no longer needed, otherwise the program will not terminate.
 * Use new-style cookie-based authentication when available, instead of old `X-Okapi-Token` authentication, refreshing the token after half of its TTL has elapsed. Fixes #1.
