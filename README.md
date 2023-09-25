@@ -8,6 +8,7 @@ This software is distributed under the terms of the Apache License, Version 2.0.
 * [Overview](#overview)
 * [How to use this library](#how-to-use-this-library)
 * [API](#api)
+* [Environment](#environment)
 * [Logging](#logging)
 * [Author](#author)
 
@@ -52,6 +53,14 @@ The dependency on this library can be expressed numerically, in which case a cor
 ## API
 
 The API is described in a separate document, [The FolioJS API](doc/api.md).
+
+
+## Environment
+
+The behaviour of the FolioJS library can be modified by the values of the following environment variables:
+
+* `LOGGING_CATEGORIES` or `LOGCAT` -- see [Logging](#logging) below.
+* `FOLIOJS_SESSION_TIMEOUT` -- if defined, the number of seconds after which a new session cookie will be requested. (If not defined, the default is to request a new cookie after half of the lifetime of the old one, which is typically about ten minutes.)
 
 
 ## Logging
