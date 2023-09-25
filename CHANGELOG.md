@@ -1,5 +1,9 @@
 # Change history for @indexdata/foliojs
 
+## 1.1.0 (IN PROGRESS)
+
+* Provide access to old-style authentication token (as `session.getToken()`) and new-style session cookie (as `session.getSessionCookie()`). Document these new session methods, with notes on why they should not be used. Fixes #2.
+
 ## [1.0.0](https://github.com/MikeTaylor/foliojs/tree/v1.0.0) (2023-09-02)
 
 * BREAKING: `session.close()` is introduced, and _must_ be called when a session is no longer needed, otherwise the program will not terminate.

@@ -21,6 +21,8 @@ Copyright (C) 2023 Index Data Aps.
     * [async disable(tenant, moduleDescriptorOrId)](#async-disabletenant-moduledescriptororid)
     * [async enable(tenant, moduleDescriptorOrId)](#async-enabletenant-moduledescriptororid)
     * [async addPermsToUser(targetUser, perms)](#async-addpermstousertargetuser-perms)
+    * [getToken()](#gettoken)
+    * [getSessionCookie()](#getsessioncookie)
 * [class `FolioModuleDescriptor`](#class-foliomoduledescriptor)
     * [getName()](#getname)
     * [getVersion()](#getversion)
@@ -154,6 +156,15 @@ Enables the module specified by the supplied module-descriptor (a `FolioModuleDe
 
 Adds the specified array permissions (such as those returned by `md.permissions()`) to the user whose username is specified.
 
+
+### getToken()
+
+If the session was logged in using old-style FOLIO authentication with a long-lived token that is used as the value of the `X-Okapi-Token` header in subsequent operations, then its value is returned by this call. <span style="font-weight: 700; color: #c00">Note. You are encouraged not to use this</span> but instead to continue using the session object, which handles its own authentication.
+
+
+### getSessionCookie()
+
+If the session was logged in using new-style FOLIO authentication with a short-lived cookie that is returned in the headers of subsequent reqeuests, then its value is returned by this call. <span style="font-weight: 700; color: #c00">Note. You are encouraged not to use this</span> but instead to continue using the session object, which handles its own authentication. In particular, note that session cookies expire without warning, potentially leading to mysterious failures.
 
 
 ## class `FolioModuleDescriptor`
