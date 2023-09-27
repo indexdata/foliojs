@@ -1,6 +1,6 @@
 {
   "name": "@indexdata/foliojs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple client library for the FOLIO library services platform",
   "repository": "https://github.com/indexdata/foliojs",
   "type": "module",
